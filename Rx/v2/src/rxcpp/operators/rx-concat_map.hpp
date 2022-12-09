@@ -111,6 +111,8 @@ struct concat_map
             , coordination(std::move(sf))
         {
         }
+        values(values const& o) = default;
+        values(values&& o) = default;
         source_type source;
         collection_selector_type selectCollection;
         result_selector_type selectResult;
@@ -124,6 +126,9 @@ struct concat_map
         : initial(std::move(o), std::move(s), std::move(rs), std::move(sf))
     {
     }
+
+    concat_map(concat_map const& o) = default;
+    concat_map(concat_map&& o) = default;
 
     template<class Subscriber>
     void on_subscribe(Subscriber scbr) const {
