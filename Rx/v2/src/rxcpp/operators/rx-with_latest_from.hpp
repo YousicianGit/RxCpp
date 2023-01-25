@@ -167,9 +167,7 @@ struct with_latest_from : public operator_base<rxu::value_type_t<with_latest_fro
                 value.reset(st);
 
                 if (state->valuesSet == sizeof... (ObservableN) && Index == 0) {
-                    auto values = rxu::surely(state->latest);
-                    auto selectedResult = rxu::apply(values, state->selector);
-                    state->out.on_next(selectedResult);
+                    state->out.on_next(rxu::apply(rxu::surely(state->latest), state->selector));
                 }
             },
         // on_error

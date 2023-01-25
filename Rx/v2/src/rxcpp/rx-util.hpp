@@ -721,8 +721,8 @@ namespace detail {
 
 template<class... T>
 inline auto surely(const std::tuple<T...>& tpl)
-    -> decltype(apply(tpl, detail::surely())) {
-    return      apply(tpl, detail::surely());
+    -> decltype(apply(tpl, detail::surely {})) {
+    return      apply(tpl, detail::surely {});
 }
 
 namespace detail {
@@ -733,7 +733,7 @@ class unwinder
 public:
     ~unwinder()
     {
-        if (!!function)
+        if (function)
         {
             RXCPP_TRY {
                 (*function)();
