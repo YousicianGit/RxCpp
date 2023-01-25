@@ -128,8 +128,7 @@ struct flat_map
         typedef Subscriber output_type;
 
         struct state_type
-            : public std::enable_shared_from_this<state_type>
-            , public values
+            : public values
         {
             state_type(values i, coordinator_type coor, output_type oarg)
                 : values(std::move(i))

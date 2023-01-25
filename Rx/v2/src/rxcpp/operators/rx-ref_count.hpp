@@ -93,8 +93,7 @@ struct ref_count : public operator_base<T>
     // removed constexpr to support older VC compilers
     static /*constexpr */ const bool has_observable_v = has_observable_t::value;
 
-    struct ref_count_state : public std::enable_shared_from_this<ref_count_state>,
-                             public ref_count_state_base<ConnectableObservable, Observable>
+    struct ref_count_state : public ref_count_state_base<ConnectableObservable, Observable>
     {
         template <class HasObservable = has_observable_t,
                   class Enabled = rxu::enable_if_all_true_type_t<

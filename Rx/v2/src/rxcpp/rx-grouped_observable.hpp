@@ -36,7 +36,6 @@ public:
 
 private:
     struct state_type
-        : public std::enable_shared_from_this<state_type>
     {
         typedef std::function<key_type()> ongetkey_type;
 

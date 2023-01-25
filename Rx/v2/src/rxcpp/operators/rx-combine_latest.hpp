@@ -202,8 +202,7 @@ struct combine_latest : public operator_base<rxu::value_type_t<combine_latest_tr
         typedef Subscriber output_type;
 
         struct combine_latest_state_type
-            : public std::enable_shared_from_this<combine_latest_state_type>
-            , public values
+            : public values
         {
             combine_latest_state_type(values i, coordinator_type coor, output_type oarg)
                 : values(std::move(i))

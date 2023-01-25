@@ -37,7 +37,6 @@ class dynamic_observable
     : public rxs::source_base<T>
 {
     struct state_type
-        : public std::enable_shared_from_this<state_type>
     {
         typedef std::function<void(subscriber<T>)> onsubscribe_type;
 

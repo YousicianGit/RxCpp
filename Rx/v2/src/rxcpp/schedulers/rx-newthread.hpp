@@ -28,7 +28,7 @@ private:
 
         new_worker(const this_type&);
 
-        struct new_worker_state : public std::enable_shared_from_this<new_worker_state>
+        struct new_worker_state
         {
             typedef detail::schedulable_queue<
                 typename clock_type::time_point> queue_item_time;

@@ -82,8 +82,7 @@ struct switch_on_next
         typedef Subscriber output_type;
 
         struct switch_state_type
-            : public std::enable_shared_from_this<switch_state_type>
-            , public values
+            : public values
         {
             switch_state_type(values i, coordinator_type coor, output_type oarg)
                 : values(i)

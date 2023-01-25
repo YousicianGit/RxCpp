@@ -73,8 +73,7 @@ struct scope : public source_base<rxu::value_type_t<scope_traits<ResourceFactory
     void on_subscribe(Subscriber o) const {
 
         struct state_type
-            : public std::enable_shared_from_this<state_type>
-            , public values
+            : public values
         {
             state_type(values i, Subscriber o)
                 : values(i)

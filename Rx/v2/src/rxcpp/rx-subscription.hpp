@@ -66,7 +66,7 @@ public:
 
 class subscription : public subscription_base
 {
-    class base_subscription_state : public std::enable_shared_from_this<base_subscription_state>
+    class base_subscription_state
     {
         base_subscription_state();
     public:
@@ -243,7 +243,7 @@ class composite_subscription_inner
 {
 private:
     typedef subscription::weak_state_type weak_subscription;
-    struct composite_subscription_state : public std::enable_shared_from_this<composite_subscription_state>
+    struct composite_subscription_state
     {
         // invariant: cannot access this data without the lock held.
         std::set<subscription> subscriptions;

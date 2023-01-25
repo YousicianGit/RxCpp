@@ -34,7 +34,7 @@ template<typename Source>
 struct co_observable_iterator;
 
 template<typename Source>
-struct co_observable_iterator_state : std::enable_shared_from_this<co_observable_iterator_state<Source>>
+struct co_observable_iterator_state
 {
     using value_type = typename Source::value_type;
 

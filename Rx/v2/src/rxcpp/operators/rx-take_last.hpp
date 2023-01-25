@@ -69,8 +69,7 @@ struct take_last : public operator_base<T>
 
         typedef Subscriber output_type;
         struct state_type
-            : public std::enable_shared_from_this<state_type>
-            , public values
+            : public values
         {
             state_type(const values& i, const output_type& oarg)
                 : values(i)

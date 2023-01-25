@@ -31,7 +31,6 @@ class multicast_observer
     };
 
     struct state_type
-        : public std::enable_shared_from_this<state_type>
     {
         explicit state_type(composite_subscription cs)
             : current(mode::Casting)
@@ -45,7 +44,6 @@ class multicast_observer
     };
 
     struct completer_type
-        : public std::enable_shared_from_this<completer_type>
     {
         ~completer_type()
         {
@@ -78,7 +76,6 @@ class multicast_observer
 
     // this type prevents a circular ref between state and completer
     struct binder_type
-        : public std::enable_shared_from_this<binder_type>
     {
         explicit binder_type(composite_subscription cs)
             : state(std::make_shared<state_type>(cs))

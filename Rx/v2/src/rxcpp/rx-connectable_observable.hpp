@@ -31,7 +31,6 @@ class dynamic_connectable_observable
     : public dynamic_observable<T>
 {
     struct state_type
-        : public std::enable_shared_from_this<state_type>
     {
         typedef std::function<void(composite_subscription)> onconnect_type;
 

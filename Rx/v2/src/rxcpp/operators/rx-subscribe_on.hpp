@@ -77,8 +77,7 @@ struct subscribe_on : public operator_base<T>
 
         typedef Subscriber output_type;
         struct subscribe_on_state_type
-            : public std::enable_shared_from_this<subscribe_on_state_type>
-            , public subscribe_on_values
+            : public subscribe_on_values
         {
             subscribe_on_state_type(const subscribe_on_values& i, const output_type& oarg)
                 : subscribe_on_values(i)

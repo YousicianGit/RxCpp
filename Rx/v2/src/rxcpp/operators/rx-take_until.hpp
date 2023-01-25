@@ -97,8 +97,7 @@ struct take_until : public operator_base<T>
 
         typedef Subscriber output_type;
         struct take_until_state_type
-            : public std::enable_shared_from_this<take_until_state_type>
-            , public values
+            : public values
         {
             take_until_state_type(const values& i, coordinator_type coor, const output_type& oarg)
                 : values(i)

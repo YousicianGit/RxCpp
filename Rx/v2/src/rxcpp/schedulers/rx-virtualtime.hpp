@@ -14,7 +14,7 @@ namespace schedulers {
 namespace detail {
 
 template<class Absolute, class Relative>
-struct virtual_time_base : std::enable_shared_from_this<virtual_time_base<Absolute, Relative>>
+struct virtual_time_base
 {
 private:
     typedef virtual_time_base<Absolute, Relative> this_type;

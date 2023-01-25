@@ -161,7 +161,6 @@ struct worker_base : public subscription_base
 };
 
 class worker_interface
-    : public std::enable_shared_from_this<worker_interface>
 {
     typedef worker_interface this_type;
 
@@ -652,7 +651,6 @@ struct current_thread;
 namespace detail {
 
 class action_type
-    : public std::enable_shared_from_this<action_type>
 {
     typedef action_type this_type;
 
@@ -681,7 +679,6 @@ public:
 };
 
 class action_tailrecurser
-    : public std::enable_shared_from_this<action_type>
 {
     typedef action_type this_type;
 

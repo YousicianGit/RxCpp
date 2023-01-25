@@ -236,8 +236,7 @@ struct zip : public operator_base<rxu::value_type_t<zip_traits<Coordination, Sel
         typedef Subscriber output_type;
 
         struct zip_state_type
-            : public std::enable_shared_from_this<zip_state_type>
-            , public values
+            : public values
         {
             zip_state_type(values i, coordinator_type coor, output_type oarg)
                 : values(std::move(i))

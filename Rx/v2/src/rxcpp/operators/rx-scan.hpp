@@ -70,7 +70,6 @@ struct scan : public operator_base<rxu::decay_t<Seed>>
     void on_subscribe(Subscriber o) const {
         struct scan_state_type
             : public scan_initial_type
-            , public std::enable_shared_from_this<scan_state_type>
         {
             scan_state_type(scan_initial_type i, Subscriber scrbr)
                 : scan_initial_type(i)

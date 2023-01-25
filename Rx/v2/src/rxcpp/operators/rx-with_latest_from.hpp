@@ -202,8 +202,7 @@ struct with_latest_from : public operator_base<rxu::value_type_t<with_latest_fro
         typedef Subscriber output_type;
 
         struct with_latest_from_state_type
-            : public std::enable_shared_from_this<with_latest_from_state_type>
-            , public values
+            : public values
         {
             with_latest_from_state_type(values i, coordinator_type coor, output_type oarg)
                 : values(std::move(i))

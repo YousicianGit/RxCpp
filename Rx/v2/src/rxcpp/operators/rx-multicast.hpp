@@ -38,7 +38,7 @@ struct multicast : public operator_base<T>
     typedef rxu::decay_t<Observable> source_type;
     typedef rxu::decay_t<Subject> subject_type;
 
-    struct multicast_state : public std::enable_shared_from_this<multicast_state>
+    struct multicast_state
     {
         multicast_state(source_type o, subject_type sub)
             : source(std::move(o))

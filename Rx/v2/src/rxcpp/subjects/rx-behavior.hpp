@@ -19,7 +19,7 @@ class behavior_observer : public detail::multicast_observer<T>
     typedef behavior_observer<T> this_type;
     typedef detail::multicast_observer<T> base_type;
 
-    class behavior_observer_state : public std::enable_shared_from_this<behavior_observer_state>
+    class behavior_observer_state
     {
         mutable std::mutex lock;
         mutable T value;

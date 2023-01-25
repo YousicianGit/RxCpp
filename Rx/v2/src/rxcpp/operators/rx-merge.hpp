@@ -103,8 +103,7 @@ struct merge
         typedef Subscriber output_type;
 
         struct merge_state_type
-            : public std::enable_shared_from_this<merge_state_type>
-            , public values
+            : public values
         {
             merge_state_type(values i, coordinator_type coor, output_type oarg)
                 : values(i)

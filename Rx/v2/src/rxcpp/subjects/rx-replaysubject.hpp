@@ -36,7 +36,7 @@ class replay_observer : public detail::multicast_observer<T>
     typedef typename traits::coordination_type coordination_type;
     typedef typename traits::coordinator_type coordinator_type;
 
-    class replay_observer_state : public std::enable_shared_from_this<replay_observer_state>
+    class replay_observer_state
     {
         mutable std::mutex lock;
         mutable std::list<T> values;

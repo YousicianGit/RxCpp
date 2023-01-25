@@ -81,8 +81,7 @@ struct sequence_equal : public operator_base<bool>
         typedef Subscriber output_type;
 
         struct state_type
-            : public std::enable_shared_from_this<state_type>
-            , public values
+            : public values
         {
             state_type(const values& vals, coordinator_type coor, const output_type& o)
                 : values(vals)

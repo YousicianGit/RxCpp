@@ -141,7 +141,6 @@ struct reduce : public operator_base<rxu::value_type_t<reduce_traits<T, Observab
     void on_subscribe(Subscriber o) const {
         struct reduce_state_type
             : public reduce_initial_type
-            , public std::enable_shared_from_this<reduce_state_type>
         {
             reduce_state_type(reduce_initial_type i, Subscriber scrbr)
                 : reduce_initial_type(i)
