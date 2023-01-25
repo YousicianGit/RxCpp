@@ -69,9 +69,13 @@ struct co_observable_inc_awaiter
 };
 
 template<typename Source>
-struct co_observable_iterator : public iterator<input_iterator_tag, typename Source::value_type>
+struct co_observable_iterator
 {
+    using iterator_category = input_iterator_tag;
+    using difference_type   = std::ptrdiff_t;
     using value_type = typename Source::value_type;
+    using pointer = value_type*;
+    using reference = value_type&;
 
     co_observable_iterator() {}
 
