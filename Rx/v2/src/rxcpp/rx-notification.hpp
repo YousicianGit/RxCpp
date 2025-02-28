@@ -123,9 +123,8 @@ private:
     struct on_next_notification : public base {
         on_next_notification(T value) : value(std::move(value)) {
         }
-        on_next_notification(const on_next_notification& o) : value(o.value) {}
-        on_next_notification(const on_next_notification&& o) : value(std::move(o.value)) {}
-        on_next_notification& operator=(on_next_notification o) { value = std::move(o.value); return *this; }
+        on_next_notification(const on_next_notification& o) = delete;
+        on_next_notification& operator=(const on_next_notification& o) = delete;
         virtual void out(std::ostream& os) const {
             os << "on_next( ";
             detail::to_stream(os, value, 0, 0);
@@ -147,9 +146,8 @@ private:
     struct on_error_notification : public base {
         on_error_notification(rxu::error_ptr ep) : ep(ep) {
         }
-        on_error_notification(const on_error_notification& o) : ep(o.ep) {}
-        on_error_notification(const on_error_notification&& o) : ep(std::move(o.ep)) {}
-        on_error_notification& operator=(on_error_notification o) { ep = std::move(o.ep); return *this; }
+        on_error_notification(const on_error_notification& o) = delete;
+        on_error_notification& operator=(const on_error_notification& o) = delete;
         virtual void out(std::ostream& os) const {
             os << "on_error(";
             os << rxu::what(ep);
