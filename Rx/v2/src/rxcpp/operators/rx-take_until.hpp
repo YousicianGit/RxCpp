@@ -170,11 +170,8 @@ struct take_until : public operator_base<T>
             state->source_lifetime,
         // on_next
             [state](T t) {
-                //
-                // everything is crafted to minimize the overhead of this function.
-                //
                 if (state->mode_value < mode::triggered) {
-                    state->out.on_next(t);
+                    state->out.on_next(std::move(t));
                 }
             },
         // on_error
