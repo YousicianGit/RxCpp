@@ -180,7 +180,11 @@ public:
         }
         auto& peek = state->q.top();
         if (!peek.what.is_subscribed()) {
+            // Released only after unlocking: destroying the last reference can unsubscribe operators that schedule
+            // on this run loop, which would deadlock on (or lock-order invert with) state->lock.
+            auto expired = peek.what;
             state->q.pop();
+            guard.unlock();
             return;
         }
         if (clock_type::now() < peek.when) {
